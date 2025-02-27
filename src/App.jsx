@@ -129,7 +129,7 @@ function App() {
         <div className='logo my-10 mx-5 text-pink-950 font-extrabold text-4xl'>MOVIFY</div>
         <div className='w-[70%] mx-auto'>
           <div className='mx-auto '>
-            <img src="/src/assets/hero.jpg" className='w-full h-[300px] object-cover object-center rounded-xl md:rounded-2xl' alt="hero image" />
+            <img src="./hero.jpg" className='w-full h-[300px] object-cover object-center rounded-xl md:rounded-2xl' alt="hero image" />
           </div>
           <h1 className='text-center mt-4 text-2xl lg:text-4xl font-bold'>
             Your Home <br /> to The <span className='text-pink-950 text-3xl'>Movies</span> You Love</h1>
@@ -166,9 +166,9 @@ function App() {
       <section className='px-9 py-18  '>
         <h1 className='text-pink-950 text-xl md:text-3xl'>All Movies</h1>
         <div className='page-selector flex justify-between my-3'>
-          {isLoading ? <></> : <img src="/src/assets/left-chevron.png" onClick={handlePreviousPage} className='cursor-pointer w-[20px] h-[20px] md:w-[30px] md:h-[30px] lg:w-[40px] lg:h-[40px]' />}
+          {isLoading ? <></> : <img src="./left-chevron.png" onClick={handlePreviousPage} className='cursor-pointer w-[20px] h-[20px] md:w-[30px] md:h-[30px] lg:w-[40px] lg:h-[40px]' />}
           {isLoading ? <Loading /> : <p className='text-md lg:text-2xl'>{currentPage}/{totalPage}</p> }
-          {isLoading ? <></> : <img src="/src/assets/right-chevron.png" onClick={handleNextPage} className='cursor-pointer w-[20px] h-[20px] md:w-[30px] md:h-[30px] lg:w-[40px] lg:h-[40px]' />}
+          {isLoading ? <></> : <img src="./right-chevron.png" onClick={handleNextPage} className='cursor-pointer w-[20px] h-[20px] md:w-[30px] md:h-[30px] lg:w-[40px] lg:h-[40px]' />}
         </div>
         {isLoading ? <Loading />
           : (<>

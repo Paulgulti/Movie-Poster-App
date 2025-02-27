@@ -1,5 +1,5 @@
 import React from 'react'
-import unavailableImage from '../assets/unavailable-img.jpg'
+import unavailableImage from '/unavailable-img.jpg'
 
 
 const AllMoviesPile = ({ movie }) => {
