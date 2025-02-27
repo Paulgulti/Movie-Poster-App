@@ -5,6 +5,7 @@ import TrendingMoviesPile from './Components/TrendingMoviesPile';
 import useDebounce from './Hooks/useDebounce';
 import AllMoviesPile from './Components/AllMoviesPile';
 import Loading from './Components/Loading';
+import searchIcon from '/search_icon.svg.png'
 
 function App() {
 
@@ -126,25 +127,29 @@ function App() {
   return (
     <main className=' min-h-screen '>
       <header>
-        <div className='logo my-10 mx-5 text-pink-950 font-extrabold text-4xl'>MOVIFY</div>
+        <div className='font-dm logo my-10 mx-5 text-pink-950 font-extrabold text-4xl'>MOVIFY</div>
         <div className='w-[70%] mx-auto'>
           <div className='mx-auto '>
             <img src="./hero.jpg" className='w-full h-[300px] object-cover object-center rounded-xl md:rounded-2xl' alt="hero image" />
           </div>
           <h1 className='text-center mt-4 text-2xl lg:text-4xl font-bold'>
-            Your Home <br /> to The <span className='text-pink-950 text-3xl'>Movies</span> You Love</h1>
+            Your Home <br /> to The <span className='text-pink-950 text-3xl font-sigmar '>Movies</span> You Love</h1>
         </div>
       </header>
-      <div className='text-center'>
-        <input type="text"
-          value={searchValue}
-          onChange={(e) => {
-            setSearchValue(e.target.value)
-            setCurrentPage(1)
-            setError(false)
-          }}
-          placeholder='Search...'
-          className='border-2 w-[220px] my-4 px-3 py-2 rounded-xl' />
+      <div className='relative flex justify-center'>
+        <div>
+          <img src={searchIcon}  alt="df" className='absolute w-[25px] mx-1 text-amber-300 top-6 ' />
+          <input type="text"
+            value={searchValue}
+            onChange={(e) => {
+              setSearchValue(e.target.value)
+              setCurrentPage(1)
+              setError(false)
+            }}
+            placeholder='Search...'
+            className=' w-[220px] my-4 px-8 py-2 rounded-xl bg-stone-800' />
+
+        </div>
       </div>
       {isLoading && <Loading />}
       <section className='trending-container px-9 py-12'>
@@ -164,12 +169,7 @@ function App() {
       </section>
 
       <section className='px-9 py-18  '>
-        <h1 className='text-pink-950 text-xl md:text-3xl'>All Movies</h1>
-        <div className='page-selector flex justify-between my-3'>
-          {isLoading ? <></> : <img src="./left-chevron.png" onClick={handlePreviousPage} className='cursor-pointer w-[20px] h-[20px] md:w-[30px] md:h-[30px] lg:w-[40px] lg:h-[40px]' />}
-          {isLoading ? <Loading /> : <p className='text-md lg:text-2xl'>{currentPage}/{totalPage}</p> }
-          {isLoading ? <></> : <img src="./right-chevron.png" onClick={handleNextPage} className='cursor-pointer w-[20px] h-[20px] md:w-[30px] md:h-[30px] lg:w-[40px] lg:h-[40px]' />}
-        </div>
+        <h1 className='text-pink-950 text-xl md:text-3xl mb-3'>All Movies</h1>
         {isLoading ? <Loading />
           : (<>
 
@@ -177,7 +177,7 @@ function App() {
               <>
                 {movies.length > 0 &&
                   <>
-                    <div className='grid grid-cols-1 xs:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-3 ' >
+                    <div className='grid grid-cols-1 xs:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-5 ' >
                       {movies.map(movie => <AllMoviesPile key={movie.id} movie={movie} />)}
                     </div>
                   </>
@@ -185,6 +185,11 @@ function App() {
 
               </>
             }
+            <div className='page-selector flex justify-between mt-7'>
+              {isLoading ? <></> : <img src="./left-chevron.png" onClick={handlePreviousPage} className='cursor-pointer w-[20px] h-[20px] md:w-[30px] md:h-[30px] lg:w-[40px] lg:h-[40px]' />}
+              {isLoading ? <Loading /> : <p className='text-md lg:text-2xl'>{currentPage}/{totalPage}</p>}
+              {isLoading ? <></> : <img src="./right-chevron.png" onClick={handleNextPage} className='cursor-pointer w-[20px] h-[20px] md:w-[30px] md:h-[30px] lg:w-[40px] lg:h-[40px]' />}
+            </div>
 
           </>)
         }
