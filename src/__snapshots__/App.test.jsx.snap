@@ -1,0 +1,33 @@
+// Vitest Snapshot v1, https://vitest.dev/guide/snapshot.html
+
+exports[`Heading Test component > First Heading 1`] = `
+<div>
+  <div>
+    <h1>
+      First Heading
+    </h1>
+    <button
+      class="bg-amber-200 text-black px-3 py-1 cursor-pointer"
+      type="button"
+    >
+      Click Me
+    </button>
+  </div>
+</div>
+`;
+
+exports[`Heading Test component > renders First Heading at first 1`] = `
+<div>
+  <div>
+    <h1>
+      First Heading
+    </h1>
+    <button
+      class="bg-amber-200 text-black px-3 py-1 cursor-pointer"
+      type="button"
+    >
+      Click Me
+    </button>
+  </div>
+</div>
+`;
