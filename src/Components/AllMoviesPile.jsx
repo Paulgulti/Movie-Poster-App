@@ -15,12 +15,12 @@ const AllMoviesPile = ({ movie }) => {
             <p className='my-3 font-extrabold'>{movie.title ? movie.title : 'Title unavailable'}</p>
             <div className='movie-card-description flex gap-3 items-center'>
                 <div className='flex gap-1'>
-                    <img src="/src/assets/rating.svg" width={"12px"} alt="" loading='lazy' />
+                    <img src="./rating.svg" width={"12px"} alt="" loading='lazy' />
                     <p>
                         {movie.vote_average ? movie.vote_average.toFixed(1) : "N/A"}
                     </p>
                 </div>
-                <p>{movie.original_language}</p>
+                <p>{movie.original_language.charAt(0).toUpperCase() + movie.original_language.slice(1)}</p>
                 <p>
                     {movie.release_date ? movie.release_date.split("-")[0] : "N/A"}
                 </p>

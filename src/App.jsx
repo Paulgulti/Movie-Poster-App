@@ -147,7 +147,7 @@ function App() {
               setError(false)
             }}
             placeholder='Search...'
-            className=' w-[220px] my-4 px-8 py-2 rounded-xl bg-stone-800' />
+            className=' w-[250px] my-4 px-8 py-2 rounded-xl bg-stone-800 md:w-[300px] lg:w-[330px] outline-none' />
 
         </div>
       </div>
